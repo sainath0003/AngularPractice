@@ -1,10 +1,9 @@
-import { CartItem } from '../cart-item';
 import { CartSevice } from './../cart-sevice';
-import { Component, inject, signal } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
-  imports: [],
+  imports: [CurrencyPipe],
   selector: 'app-cart',
   styleUrl: './cart.scss',
   templateUrl: './cart.html',

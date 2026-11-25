@@ -4,10 +4,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { CartSevice } from '../cart/cart-sevice';
 import { MatBadgeModule } from '@angular/material/badge';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
-  imports: [MatToolbarModule,MatIconModule,MatButtonModule,MatBadgeModule],
+  imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatBadgeModule, RouterLink],
   selector: 'app-header',
   styleUrl: './header.scss',
   templateUrl: './header.html',

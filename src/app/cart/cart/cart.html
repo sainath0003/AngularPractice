@@ -1,15 +1,20 @@
-<div>
-<span>Cart Items</span>
-<span>Cart Total</span>
-
-@for(item of cartService.getCartItems() ;track item.product.id)
- { <div>
-    <span>{{item.product.name}} -{{item.quantity}}</span>
-    <span>{{item.product.price}}*{{item.quantity}}</span>
+<div class="cart-container">
+  <div class="cart-header">
+    <span>Cart Items</span>
+    <span class="text-right">Unit Price</span>
+    <span class="text-right">Cart Total</span>
   </div>
-}
-<div>
-  <span>Total</span>
-  <span>{{cartService.getCartTotal()}}</span>
-</div>
+
+  @for (item of cartService.getCartItems(); track item.product.id) {
+    <div class="cart-item">
+      <span>{{ item.product.name }} - {{ item.quantity }}</span>
+      <span class="text-right unit-price">{{ item.product.price | currency:'USD' }} &times; {{ item.quantity }}</span>
+      <span class="text-right item-total">{{ item.product.price * item.quantity | currency:'USD' }}</span>
+    </div>
+  }
+
+  <div class="cart-total">
+    <span>Total</span>
+    <span class="text-right">{{ cartService.getCartTotal() | currency:'USD' }}</span>
+  </div>
 </div>
