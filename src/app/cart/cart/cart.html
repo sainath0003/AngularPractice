@@ -1,0 +1,15 @@
+<div>
+<span>Cart Items</span>
+<span>Cart Total</span>
+
+@for(item of cartService.getCartItems() ;track item.product.id)
+ { <div>
+    <span>{{item.product.name}} -{{item.quantity}}</span>
+    <span>{{item.product.price}}*{{item.quantity}}</span>
+  </div>
+}
+<div>
+  <span>Total</span>
+  <span>{{cartService.getCartTotal()}}</span>
+</div>
+</div>
